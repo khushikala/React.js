@@ -1,0 +1,71 @@
+npm works as a node package manager
+❌It does not stand for Node Package Manager
+
+When we do npm init , package.json is created
+
+package.json is the configuration for npm.
+It keeps track of what version of that package is installed in our system.
+If there is carat that means install any version, and if there is any minor update upgrade it also
+It will manage all the packages that we will install in our system
+and sometimes these packages are also known as dependencies
+
+Package and dependency is the same thing
+
+*️⃣Most Important is BUNDLER
+Package we will use is parcel
+
+There are two types of dependencies:
+Dev dependency: generally required in development phase. (npm install -D parcel)
+Normal dependency: can be used in production also.
+
+"parcel": "^2.13.3" 
+^ carat : here parcel will automatically do minor updates like 2.13.3 to 2.13.4
+~ tilde : in this case, parcel will automatically do major updates like 3.0.0 to 4.0.0 (NOT RECOMMENDED🚫)
+
+package-lock.json keeps track of exact version that is being installed (2.13.3)
+
+node-modules is like a database. It contains the actual data of those dependencies/packages that our projects need.
+
+Transitive dependency: Our project has a dependency parcel and parcel can have dependency in itself so it is transitive dependency
+
+should I need to push node-modules on git? Answer-NO
+should I need to push package.json and packae-lock.json on git? Answer-YES
+and why not node_modules because IF I HAVE these two json files then I can re-create node_modules
+COMMAND: If have these two json and then want to install node_modules again: npm install
+
+whatever you can re-generate, do not put it into git
+
+.gitignore contains all the files which we do not want to push to git.
+
+IGNITING OUR APP:
+
+npx parcel index.html
+It will create a server on local machine http://localhost:1234
+
+npm for installing package
+npx means executing package
+
+WAYS TO GET REACT IN OUR APP: By using cdn links (NOT RECOMMENDED🚫 because fetching from cdn is costly operation (network calls))
+ANOTHER WAY TO GET REACT IN OUR APP:
+by npm
+npm install react 
+npm install react-dom 
+(OR) npm i react-dom 
+
+parcel -
+-Dev Build
+-Local server
+-HMR (Hot Module Replacement): automatically refreshes the page
+HOW? because it is using File watching algorithm which is written in C++
+- Caching : Faster builds
+- Image Optimization
+- Minification 
+- Compression
+- Consistent hashing
+- Code Spliting
+- Differential Bundling: support older browsers
+- Diagnostic 
+- Error Handling
+- HTTPS
+- Tree Shaking: remove unused code
+- Different dev and prod bundles

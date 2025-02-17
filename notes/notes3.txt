@@ -1,0 +1,34 @@
+PLAIN REACT - OLD WAY
+const plainHeading = React.createElement(
+  "h1",
+  { id: "heading", xyz: "abc" },
+  "Hello world from react!"
+); 
+
+ReactElement is Object which becomes HTML that browser understands
+React.createElement => ReactElement(Object) => HTMLElement (render)
+
+JSX - is not HTML in JS
+HTML-like or XML-like syntax
+
+const heading = (
+  <h1 id="heading" className="head" tabIndex="1">
+    Hello world from jsx
+  </h1>
+);
+
+JSX => Babel transpiles it to React.createElement => ReactElement(Object) => HTMLElement (render)
+
+it is not valid pure javascript
+if js engine is not able to understand this then how code id working?
+code is working because PARCEL(BABEL) is doing the job behind the scenes
+this code is transpiled before it goes to js engine
+transpile means this code is converted into code which browser understands.
+
+React Component
+- Class based Component (OLD WAY)
+- Functional Component (NEW WAY) - Just a normal js function which returns jsx code or react element
+
+Component Composition: Component inside Component
+
+Cross-site scripting attack 
